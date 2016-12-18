@@ -9,7 +9,7 @@
   $password = "zhaohaifeng123";
   $database = "AirConditioner";
   $connection = new mysqli($host, $username, $password, $database);
-  $sql = "INSERT INTO CommandOrder VALUES(null, '{$command}', NOW(), 0, 1);";
+  $sql = "INSERT INTO CommandList VALUES(null, '{$command}', 0);";
   $connection->query($sql);
   echo "Connection Succeed!";
 ?>
