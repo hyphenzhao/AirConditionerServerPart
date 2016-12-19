@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<style>
+		.im_centered{margin: 0 auto;}
+	</style>
+</head>
+<body style="max-width:400px">
+<div class="im-centered">
+	<div class="row">
+		<div class="col-xs-6 col-md-6 center-block">
+			<button type="button" class="btn btn-danger center-block" id="power_button">轻按开机</button>
+		</div>
+		<div class="col-xs-6 col-md-6 center-block">
+			<button type="button" class="btn btn-primary center-block" id="smart_button">智能升温</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4 col-md-4 center-block">
+			<button type="button" class="btn btn-primary center-block" id="temp_down_button">◅减少</button>
+		</div>
+		<div class="col-xs-4 col-md-4 vcenter">
+			<h4>温度:</h4><h4 name="temp_text"></h4>
+		</div>
+		<div class="col-xs-4 col-md-4 center-block">
+			<button type="button" class="btn btn-primary center-block" id="temp_up_button">增加▻</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4 col-md-4 center-block">
+			<button type="button" class="btn btn-primary center-block" id="humi_down_button">◅减少</button>
+		</div>
+		<div class="col-xs-4 col-md-4 vcenter">
+			<h4>湿度:</h4><h4 name="humi_text"></h4>
+		</div>
+		<div class="col-xs-4 col-md-4 center-block">
+			<button type="button" class="btn btn-primary center-block" id="humi_up_button">增加▻</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4 col-md-4 center-block">
+			<button type="button" class="btn btn-primary center-block" id="speed_down_button">◅减少</button>
+		</div>
+		<div class="col-xs-4 col-md-4 vcenter">
+			<h4>风速:</h4><h4 name="speed_text"></h4>
+		</div>
+		<div class="col-xs-4 col-md-4 center-block">
+			<button type="button" class="btn btn-primary center-block" id="speed_up_button">增加▻</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4 col-md-4 center-block">
+			<button type="button" class="btn btn-primary center-block" id="mode_down_button">◅减少</button>
+		</div>
+		<div class="col-xs-4 col-md-4 vcenter">
+			<h4>模式:</h4><h4 name="mode_text"></h4>
+		</div>
+		<div class="col-xs-4 col-md-4 center-block">
+			<button type="button" class="btn btn-primary center-block" id="mode_up_button">增加▻</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4 col-md-4 center-block">
+			<button type="button" class="btn btn-primary center-block" id="time_down_button">◅减少</button>
+		</div>
+		<div class="col-xs-4 col-md-4 vcenter">
+			<h4>定时:</h4><h4 name="time_text"></h4>
+		</div>
+		<div class="col-xs-4 col-md-4 center-block">
+			<button type="button" class="btn btn-primary center-block" id="time_up_button">增加▻</button>
+		</div>
+	</div>
+</div>
+<!-- Content goes here -->
+</body>
+</html>
