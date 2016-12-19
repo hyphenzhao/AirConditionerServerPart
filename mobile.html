@@ -11,68 +11,69 @@
 <div class="im-centered">
 	<div class="row">
 		<div class="col-xs-6 col-md-6 center-block">
-			<button type="button" class="btn btn-danger center-block" id="power_button">轻按开机</button>
+			<button type="button" class="btn btn-success center-block" id="power_button" onclick="powerClicked()">轻按开机</button>
 		</div>
 		<div class="col-xs-6 col-md-6 center-block">
-			<button type="button" class="btn btn-primary center-block" id="smart_button">智能升温</button>
+			<button type="button" class="btn btn-primary center-block" id="smart_button" name="power_control">智能升温</button>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-4 col-md-4 center-block">
-			<button type="button" class="btn btn-primary center-block" id="temp_down_button">◅减少</button>
+			<button type="button" class="btn btn-primary center-block" id="temp_down_button" name="power_control" onclick="tempDownClicked()">◅减少</button>
 		</div>
 		<div class="col-xs-4 col-md-4 vcenter">
-			<h4>温度:</h4><h4 name="temp_text"></h4>
+			<h4 id="temp_text" name="power_control">温度：--°C</h4>
 		</div>
 		<div class="col-xs-4 col-md-4 center-block">
-			<button type="button" class="btn btn-primary center-block" id="temp_up_button">增加▻</button>
+			<button type="button" class="btn btn-primary center-block" id="temp_up_button" name="power_control" onclick="tempUpClicked()">增加▻</button>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-4 col-md-4 center-block">
-			<button type="button" class="btn btn-primary center-block" id="humi_down_button">◅减少</button>
+			<button type="button" class="btn btn-primary center-block" id="humi_down_button" name="power_control" onclick="humiDownClicked()">◅减少</button>
 		</div>
 		<div class="col-xs-4 col-md-4 vcenter">
-			<h4>湿度:</h4><h4 name="humi_text"></h4>
+			<h4 id="humi_text" name="power_control">湿度：--%</h4>
 		</div>
 		<div class="col-xs-4 col-md-4 center-block">
-			<button type="button" class="btn btn-primary center-block" id="humi_up_button">增加▻</button>
+			<button type="button" class="btn btn-primary center-block" id="humi_up_button" name="power_control" onclick="humiUpClicked()">增加▻</button>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-4 col-md-4 center-block">
-			<button type="button" class="btn btn-primary center-block" id="speed_down_button">◅减少</button>
+			<button type="button" class="btn btn-primary center-block" id="speed_down_button" name="power_control" onclick="speedDownClicked()">◅减少</button>
 		</div>
 		<div class="col-xs-4 col-md-4 vcenter">
-			<h4>风速:</h4><h4 name="speed_text"></h4>
+			<h4 id="speed_text" name="power_control">风速：--</h4>
 		</div>
 		<div class="col-xs-4 col-md-4 center-block">
-			<button type="button" class="btn btn-primary center-block" id="speed_up_button">增加▻</button>
+			<button type="button" class="btn btn-primary center-block" id="speed_up_button" name="power_control" onclick="speedUpClicked()">增加▻</button>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-4 col-md-4 center-block">
-			<button type="button" class="btn btn-primary center-block" id="mode_down_button">◅减少</button>
+			<button type="button" class="btn btn-primary center-block" id="mode_down_button" name="power_control" onclick="modeDownClicked()">◅减少</button>
 		</div>
 		<div class="col-xs-4 col-md-4 vcenter">
-			<h4>模式:</h4><h4 name="mode_text"></h4>
+			<h4 id="mode_text" name="power_control">模式：--</h4>
 		</div>
 		<div class="col-xs-4 col-md-4 center-block">
-			<button type="button" class="btn btn-primary center-block" id="mode_up_button">增加▻</button>
+			<button type="button" class="btn btn-primary center-block" id="mode_up_button" name="power_control" onclick="modeUpClicked()">增加▻</button>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-4 col-md-4 center-block">
-			<button type="button" class="btn btn-primary center-block" id="time_down_button">◅减少</button>
+			<button type="button" class="btn btn-primary center-block" id="time_down_button" name="power_control" onclick="timeDownClicked()">◅减少</button>
 		</div>
 		<div class="col-xs-4 col-md-4 vcenter">
-			<h4>定时:</h4><h4 name="time_text"></h4>
+			<h4 id="time_text" name="power_control">定时：--H</h4>
 		</div>
 		<div class="col-xs-4 col-md-4 center-block">
-			<button type="button" class="btn btn-primary center-block" id="time_up_button">增加▻</button>
+			<button type="button" class="btn btn-primary center-block" id="time_up_button" name="power_control" onclick="timeUpClicked()">增加▻</button>
 		</div>
 	</div>
 </div>
+<script src="./js/mobile.js"></script>
 <!-- Content goes here -->
 </body>
 </html>
