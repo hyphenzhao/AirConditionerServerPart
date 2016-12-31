@@ -16,7 +16,7 @@
     $commands = $result->fetch_assoc();
     $top_command_no = $commands["commandNo"];
     $top_command_id = $commands["commandID"];
-    echo "{".$top_command_id."}";
+    echo $top_command_id;
     $sql = "UPDATE CommandList SET executed=1 WHERE commandNo={$top_command_no};";
     $connection->query($sql);
   }
