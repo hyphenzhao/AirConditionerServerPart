@@ -2,6 +2,7 @@ var temp,humi,mode,speed,time;
 var modeList = ["制冷","制热", "除湿"];
 var speedList = ["自动","低速","中速","高速"];
 var power=0, smart=0;
+var globalResponseText;
 
 window.onload = function(){
 	var elements = document.getElementsByName("power_control");
@@ -34,10 +35,14 @@ function powerClicked(){
 		document.getElementById("power_button").innerHTML = "轻按开机";
 		document.getElementById("power_button").setAttribute("class", "btn btn-success center-block");
 		power = 0;
+		httpGetAsync(getCommandID());
+		//alert(getCommandID());
+		//httpGetAsync("http://ec2-54-254-214-255.ap-southeast-1.compute.amazonaws.com/AirConditionerServerPart/receiveCommand.php",globalResponseText);
 	}
 }
 
 function updateContent() {
+	httpGetAsync(getCommandID());
 	document.getElementById("temp_text").innerHTML = "温度：" + temp + "°C";
 	document.getElementById("humi_text").innerHTML = "湿度：" + humi + "%";
 	document.getElementById("mode_text").innerHTML = "模式：" + modeList[mode];
@@ -63,6 +68,7 @@ function speedUpClicked(){
 }
 function modeUpClicked(){
 	mode = (mode + 1) % 3;
+	modeCheck(mode);
 	updateContent();
 }
 function timeUpClicked(){
@@ -90,6 +96,7 @@ function speedDownClicked(){
 function modeDownClicked(){
 	mode = (mode - 1) % 3;
 	if(mode < 0) mode += 3;
+	modeCheck(mode);
 	updateContent();
 }
 function timeDownClicked(){
@@ -98,6 +105,25 @@ function timeDownClicked(){
 	updateContent();
 }
 
-function modeCheck() {
-	
+function modeCheck(modeType) {
+	if(modeType == 0)
+		document.getElementById("smart_button").disabled = false;
+	else
+		document.getElementById("smart_button").disabled = true;
+}
+
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous
+    xmlHttp.send(null);
+}
+
+function getCommandID() {
+	var url = "http://ec2-54-254-214-255.ap-southeast-1.compute.amazonaws.com/AirConditionerServerPart/sendCommand.php?commandID=";
+	return url + power + "-" + mode + "-" + temp + "-" + speed + "-" + time + "-" + humi;
 }
