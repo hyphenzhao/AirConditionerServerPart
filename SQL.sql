@@ -1,3 +1,10 @@
+CREATE TABLE Status(
+	statusID integer unique AUTO_INCREMENT,
+	temperature integer,
+	humidity integer,
+	executed boolean DEFAULT FALSE
+);
+
 CREATE TABLE CommandList(
 	commandID integer unique,
 	commandName varchar(100),
