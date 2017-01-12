@@ -35,10 +35,10 @@ function powerClicked(){
 		document.getElementById("power_button").innerHTML = "轻按开机";
 		document.getElementById("power_button").setAttribute("class", "btn btn-success center-block");
 		power = 0;
-		httpGetAsync(getCommandID());
 		//alert(getCommandID());
 		//httpGetAsync("http://ec2-54-254-214-255.ap-southeast-1.compute.amazonaws.com/AirConditionerServerPart/receiveCommand.php",globalResponseText);
 	}
+	httpGetAsync(getCommandID());
 }
 
 function updateContent() {
