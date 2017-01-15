@@ -11,6 +11,11 @@
 <body style="max-width:400px">
 <div class="im-centered">
 	<div class="row">
+		<div class="col-xs-12 col-md-12 vcenter">
+			<h3>手机空调遥控器网页版</h3>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-xs-6 col-md-6 center-block">
 			<button type="button" class="btn btn-success center-block" id="power_button" onclick="powerClicked()">轻按开机</button>
 		</div>
@@ -74,14 +79,18 @@
 		</div>
 	</div>
 	<div class="row">
+		<button type="button" class="btn btn-primary center-block" id="test" name="power_control" onclick="jqueryAjax()">获得当前空调状态</button>
+	</div>
+	<div class="row">
 		<div class="col-xs-6 col-md-6 vcenter">
 			<h4 id="current_temp_text" name="power_control">当前温度：--°C</h4>
 		</div>
 		<div class="col-xs-6 col-md-6 vcenter">
-			<h4 id="current_temp_text" name="power_control">当前湿度：--%</h4>
+			<h4 id="current_humi_text" name="power_control">当前湿度：--%</h4>
 		</div>
 	</div>
 </div>
+<script src="./js/jquery.js"></script>
 <script src="./js/mobile.js"></script>
 <!-- Content goes here -->
 </body>

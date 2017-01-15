@@ -34,6 +34,8 @@ function powerClicked(){
 		document.getElementById("time_text").innerHTML = "定时：" + "--" + "H";
 		document.getElementById("power_button").innerHTML = "轻按开机";
 		document.getElementById("power_button").setAttribute("class", "btn btn-success center-block");
+		$("#current_temp_text").html("当前温度：--°C");
+		$("#current_humi_text").html("当前湿度：--%");
 		power = 0;
 		//alert(getCommandID());
 		//httpGetAsync("http://ec2-54-254-214-255.ap-southeast-1.compute.amazonaws.com/AirConditionerServerPart/receiveCommand.php",globalResponseText);
@@ -116,14 +118,25 @@ function httpGetAsync(theUrl, callback)
 {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.responseText);
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200);
+          //  callback(xmlHttp.responseText);
+
     }
     xmlHttp.open("GET", theUrl, true); // true for asynchronous
     xmlHttp.send(null);
 }
 
 function getCommandID() {
-	var url = "http://ec2-54-254-214-255.ap-southeast-1.compute.amazonaws.com/AirConditionerServerPart/sendCommand.php?commandID=";
+	var url = "./sendCommand.php?commandID=";
 	return url + power + "-" + mode + "-" + temp + "-" + speed + "-" + time + "-" + humi;
+}
+
+function jqueryAjax() {
+	htmlobj = $.ajax({url:"./receiveStatus.php",async:false});
+	statusText = htmlobj.responseText;
+	if(statusText != null && statusText != "") {
+		strs = statusText.split("-");
+		$("#current_temp_text").html("当前温度：" + strs[0] + "°C");
+		$("#current_humi_text").html("当前湿度：" + strs[1] + "%");
+	}
 }
